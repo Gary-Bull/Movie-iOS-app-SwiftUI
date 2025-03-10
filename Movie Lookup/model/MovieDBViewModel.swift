@@ -15,7 +15,7 @@ class MovieDBViewModel: ObservableObject {
     @Published var popular: [Movie] = []
     @Published var searchResults: [Movie] = []
     
-    static let apiKey = "4367d80ae6635b1c87a7cc73474da9ce"
+	static let apiKey = Bundle.main.infoDictionary?["API_KEY"] as? String
     
     func loadTrending() {
         Task {
